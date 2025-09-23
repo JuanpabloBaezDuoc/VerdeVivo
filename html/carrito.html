@@ -1,0 +1,70 @@
+<!--
+  VerdeNido · Carrito
+  - Tabla dinámica desde localStorage: producto, precio, cantidad, subtotal, acción.
+  - Permite cambiar cantidades, eliminar productos, vaciar y simular pago.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VerdeNido · Carrito</title>
+  
+
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  
+<header class="shadow">
+  <div class="container">
+    <h1><a href="../html/index.html">VerdeNido</a></h1>
+    <nav>
+      <a href="../html/index.html">Inicio</a>
+      <a href="../html/producto.html">Productos</a>
+      <a href="../html/carrito.html">Carrito <span id="cart-count" class="pill">0</span></a>
+      <a href="../html/contactos.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <h2>Carrito</h2>
+    <!-- Mensaje cuando no hay productos -->
+    <div id="empty" class="card" style="display:none;">
+      <p>Tu carrito está vacío. Ve a <a href="./producto.html">Productos</a> para agregar items.</p>
+    </div>
+    <!-- Tabla del carrito cuando hay productos -->
+    <div id="cartWrap" style="display:none;">
+      <table id="cartTable">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th class="right">Precio</th>
+            <th class="right">Cantidad</th>
+            <th class="right">Subtotal</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3" class="right">Total</td>
+            <td class="right" id="total">$0</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px;">
+        <button class="secondary" id="vaciar">Vaciar carrito</button>
+        <button id="pagar">Pagar</button>
+      </div>
+    </div>
+  </main>
+  <!-- Scripts: almacenamiento y lógica de carrito -->
+  <script src="../js/almacenamiento.js"></script>
+  <script src="../js/carrito.js"></script>
+  <!-- Render del carrito -->
+  <script>mostrarCarrito();</script>
+</body>
+</html>

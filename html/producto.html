@@ -1,0 +1,59 @@
+<!--
+  VerdeNido · Productos
+  - Catálogo de 12 productos con filtro por categoría y búsqueda por nombre.
+  - Render dinámico con JS desde el arreglo PRODUCTOS.
+  - Botón "Agregar" guarda en carrito usando localStorage.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VerdeNido · Productos</title>
+  
+
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="shadow">
+  <div class="container">
+    <h1><a href="../html/index.html">VerdeNido</a></h1>
+    <nav>
+      <a href="../html/index.html">Inicio</a>
+      <a href="../html/producto.html">Productos</a>
+      <a href="../html/carrito.html">Carrito <span id="cart-count" class="pill">0</span></a>
+      <a href="../html/contactos.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <h2>Productos</h2>
+    <!-- Barra de controles: categoría + buscador -->
+    <div class="bar">
+      <label for="categoria">Filtrar por categoría:</label>
+      <select id="categoria">
+        <option value="Todas">Todas</option>
+        <option value="Plantas">Plantas</option>
+        <option value="Maceteros">Maceteros</option>
+        <option value="Sustratos">Sustratos</option>
+        <option value="Herramientas">Herramientas</option>
+        <option value="Riego">Riego</option>
+      </select>
+      <input type="search" id="buscar" placeholder="Buscar por nombre..." />
+    </div>
+    <div id="grid" class="grid"></div>
+    <!-- Grilla donde se inyectan tarjetas de productos -->
+  </main>
+  <!-- Scripts: helpers y lógica de catálogo -->
+  <script src="../js/almacenamiento.js"></script>
+  <script src="../js/productos.js"></script>
+  <!-- Punto de entrada de la página de productos -->
+
+  <script>iniciarProductos();</script>
+</body>
+</html>
