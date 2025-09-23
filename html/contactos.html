@@ -1,0 +1,46 @@
+<!--
+  VerdeNido · Contacto
+  - Formulario demostrativo (sin backend): muestra un alert y limpia el formulario.
+  - Incluye email de contacto.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VerdeNido · Contacto</title>
+  
+
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  
+<header class="shadow">
+  <div class="container">
+    <h1><a href="../html/index.html">VerdeNido</a></h1>
+    <nav>
+      <a href="../html/index.html">Inicio</a>
+      <a href="../html/producto.html">Productos</a>
+      <a href="../html/carrito.html">Carrito <span id="cart-count" class="pill">0</span></a>
+      <a href="../html/contactos.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <h2>Contacto</h2>
+    <!-- Formulario (solo demostración) -->
+    <form class="card" onsubmit="event.preventDefault(); alert('Gracias por tu mensaje, te contactaremos pronto.'); this.reset();">
+      <label>Nombre<br><input required placeholder="Tu nombre"/></label><br>
+      <label>Email<br><input type="email" required placeholder="tunombre@email.com"/></label><br>
+      <label>Mensaje<br><textarea required rows="5" placeholder="Cuéntanos qué necesitas"></textarea></label><br>
+      <button type="submit">Enviar</button>
+    </form>
+    <p class="muted">También puedes escribirnos a <a href="mailto:hola@verdenido.cl">hola@verdenido.cl</a></p>
+  </main>
+  <script src="../js/almacenamiento.js"></script>
+     // Refresca contador del carrito en el header
+  <script>actualizarContadorCarrito(document.getElementById('cart-count'));</script>
+</body>
+</html>

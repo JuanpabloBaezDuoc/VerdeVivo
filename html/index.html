@@ -1,0 +1,81 @@
+<!--
+  VerdeNido · Inicio
+  - Header de navegación con contador del carrito (badge).
+  - Sección hero y accesos directos a categorías.
+  - Live Server: abrir html/index.html para navegar.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VerdeNido · Inicio</title>
+  
+
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Header de navegación: logo + enlaces -->
+<header class="shadow">
+  <div class="container">
+    <h1><a href="../html/index.html">VerdeNido</a></h1>
+    <nav>
+      <a href="../html/index.html">Inicio</a>
+      <a href="../html/producto.html">Productos</a>
+      <a href="../html/carrito.html">Carrito <span id="cart-count" class="pill">0</span></a>
+      <a href="../html/contactos.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <!-- Sección hero: bienvenida y CTA a Productos -->
+    <section class="hero">
+      <div>
+        <h2>Bienvenido a VerdeNido</h2>
+        <p>Venta de plantas de interior y artículos para su cuidado. Maceteros, sustratos, herramientas y más.</p>
+        <p class="muted">Funciona con Live Server: abre <b>html/index.html</b> y navega.</p>
+      </div>
+      <div>
+        <a href="./producto.html"><button>Ver productos</button></a>
+      </div>
+    </section>
+    <h3 style="margin-top:24px;">Categorías destacadas</h3>
+    <!-- Tarjetas de categorías con query param ?categoria= -->
+    <div class="grid">
+      <a class="card" href="./producto.html?categoria=Plantas">
+        <img src="../images/planta.png" alt="Plantas" />
+        <h3>Plantas</h3>
+        <p class="muted">Verde que te quiero verde.</p>
+      </a>
+      <a class="card" href="./producto.html?categoria=Maceteros">
+        <img src="../images/macetero.png" alt="Maceteros" />
+        <h3>Maceteros</h3>
+        <p class="muted">De mesa, colgantes y más.</p>
+      </a>
+      <a class="card" href="./producto.html?categoria=Sustratos">
+        <img src="../images/sustratos.png" alt="Sustratos" />
+        <h3>Sustratos</h3>
+        <p class="muted">La base para crecer.</p>
+      </a>
+      <a class="card" href="./producto.html?categoria=Herramientas">
+        <img src="../images/herramientas.png" alt="Herramientas" />
+        <h3>Herramientas</h3>
+        <p class="muted">Todo para cuidar tus plantas.</p>
+      </a>
+      <a class="card" href="./producto.html?categoria=Riego">
+        <img src="../images/riego.png" alt="Riego" />
+        <h3>Riego</h3>
+        <p class="muted">Regadores y soluciones de riego.</p>
+      </a>
+    </div>
+    <p class="footer">© 2025 VerdeNido.</p>
+  </main>
+  <!-- Scripts: helpers de carrito para actualizar contador del header -->
+  <script src="../js/almacenamiento.js"></script>
+  <script>
+    actualizarContadorCarrito(document.getElementById('cart-count'));
+  </script>
+</body>
+</html>
